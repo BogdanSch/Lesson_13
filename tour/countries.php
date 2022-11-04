@@ -3,6 +3,7 @@
 $countrie = "US";
 $stars = $_POST['stars'];
 $price = $_POST['price'];
+$transport = $_POST['transport'];
 
 if (isset($_POST['formSubmit'])) {
     $countrie = $_POST['formCountry'];
@@ -21,15 +22,13 @@ if (isset($_POST['formSubmit'])) {
         case "Mexico":
             $redir = "Mexico.php";
             break;
-        case "Russia":
-            $redir = "Russia.php";
-            break;
         case "Japan":
             $redir = "Japan.php";
             break;
-        default:echo ("Error!");exit();
+        default:echo ("Error!");
+        exit();
             break;
     }
-    header("Location: $redir?star=$stars&price=$price");
+    header("Location: $redir?star=$stars&price=$price&transport=$transport");
     exit();
 }
