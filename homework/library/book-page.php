@@ -15,11 +15,14 @@
         <?php 
             require_once("books-library.php");
 
-            $requested_books = $_GET['books-names'];
-            foreach ($requested_books as $value) {
-                $author = $books[$value];
-                print "<tr><td style=\"border: 1px solid #000;\">$value</td>";
-                print "<td style=\"border: 1px solid #000;\">$author</td></tr>";
+            $books_names = $_GET['books-names'];
+            $books_authors = $_GET['books-authors'];
+
+            for ($i=0; $i < count($books_names); $i++) { 
+                $current_book_name = $books_names[$i];
+                $current_book_author = $books_authors[$i];
+                print "<tr><td style=\"border: 1px solid #000;\">$current_book_name</td>";
+                print "<td style=\"border: 1px solid #000;\">$current_book_author</td></tr>";
             }
         ?>
     </table>
