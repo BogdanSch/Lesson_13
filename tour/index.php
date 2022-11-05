@@ -23,7 +23,7 @@
             <select name="transport">
                 <option value="Bus">Bus</option>
                 <option value="Car">Car</option>
-                <option value="Car">Airplane</option>
+                <option value="Airplane">Airplane</option>
             </select>
         </label><br>
         <button name="formSubmit" type="submit">ОК</button>
