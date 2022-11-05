@@ -10,6 +10,12 @@
             Enter the book name: 
             <input type="text" name="book" size="50">
         </label><br>
+        <h3>Sort by: </h3>
+        <select name="sortOption">
+            <option value="cmp_name">Book name</option>
+            <option value="cmp_author">Book author</option>
+            <option value="cmp_date">Book date</option>
+        </select>
         <input name="Submit" type=submit value="Search">
       </form>
   </body>

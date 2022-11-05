@@ -46,16 +46,18 @@ if (isset($_GET['Submit'])) {
     $book_request = $_GET['book'];
     
     try {
+        $sortOption = $_GET['sortOption'];
         $requested_books = search($books, $book_request);
         $dir = "";
 
         foreach ($requested_books as $key => $value) {
             $book_name = $value["name"];
             $book_author = $value["author"];
-            $dir .= "books-names[]=$book_name&books-authors[]=$book_author&";
+            $book_date = $value["date"];
+            $dir .= "books-names[]=$book_name&books-authors[]=$book_author&books-dates[]=$book_date&";
         }
         if ($requested_books){
-            header("Location: book-page.php?$dir");
+            header("Location: book-page.php?$dir"."sortOption=$sortOption");
         }
         else{
             echo "<h1>Sorry! We can't find any of requested books</h1>";
